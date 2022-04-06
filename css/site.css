@@ -200,3 +200,13 @@ footer {
         height: 500px;
     }
 }
+
+.connectStyle {
+    background-color: #44585a;
+    color: white;
+}
+
+.connectColor {
+    font-weight: bold;
+    color: var(--ch-dark-color)
+}
