@@ -35,7 +35,7 @@
 
 <body>
     <!-- Nav Bar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" id="mainNav">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
         <div class="container-xxl">
             <a class="navbar-brand" href="#">
                 <img src="/img/screenshots/dw_signature_white.png" height="50">
@@ -43,7 +43,9 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon-ch">
+                    <i class="bi bi-list"></i>
+                </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -84,7 +86,7 @@
                                 class="mainLogo"></span>
                     </div>
                     <div class="subTitle">WEB DEVELOPER</div>
-                    <a class="btn connectStyle mt-3" href="#contact">CONTACT ME</a>
+                    <a class="btn btn-primary mt-3" href="#contact">CONTACT ME</a>
                 </div>
             </div>
         </div>
@@ -132,7 +134,7 @@
                                 <span>Wilmington, NC</span>
                             </div>
                             <div class="col-12 mt-3">
-                                <a href="#" class="btn btn-xl connectStyle">Download Resume</a>
+                                <a href="#" class="btn btn-xl btn-primary">Download Resume</a>
                             </div>
                         </div>
                     </address>
@@ -402,7 +404,7 @@
                                     (eventually) be able to transition easily. Imagine a combination of HTTP and AJAX.
                                 </p>
                                 <div class="text-start">
-                                    <a class="btn connectStyle btn-sm" href="#">Read More</a>
+                                    <a class="btn btn-primary btn-sm" href="#">Read More</a>
                                 </div>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
@@ -433,7 +435,7 @@
                                     awards page of the customer journey.
                                 </p>
                                 <div class="text-start">
-                                    <a class="btn connectStyle btn-sm" href="#">Read More</a>
+                                    <a class="btn btn-primary btn-sm" href="#">Read More</a>
                                 </div>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
@@ -444,7 +446,7 @@
         </section>
         <section id="contact" class="section-page">
             <h1>LET'S CONNECT</h1>
-            <form action="#" class="connectColor">
+            <form>
                 <div class="row mb-1">
                     <div class="col-12 col-md-6">
                         <label class="form-label">First Name:</label>
@@ -453,19 +455,20 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label">Last Name:</label>
-                        <input type="text" name="lastName" class="form-control" placeholder="Doe"
-                            aria-label="Last name" required="">
+                        <input type="text" name="lastName" class="form-control" placeholder="Doe" aria-label="Last name"
+                            required="">
                     </div>
                 </div>
                 <div class="row mb-1">
                     <div class="col-12 col-md-6">
                         <label class="form-label">Email:</label>
-                        <input type="email" name="email" class="form-control" placeholder="example@gmail.com" aria-label="Email"
-                            required="">
+                        <input type="email" name="email" class="form-control" placeholder="example@gmail.com"
+                            aria-label="Email" required="">
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label">Phone (Optional):</label>
-                        <input type="text" name="phone" class="form-control" placeholder="555-555-5555" aria-label="Phone">
+                        <input type="text" name="phone" class="form-control" placeholder="555-555-5555"
+                            aria-label="Phone">
                     </div>
                 </div>
                 <div class="row mb-1">
@@ -482,14 +485,56 @@
                             aria-label="Message" required=""></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn connectStyle mt-2">Submit</button>
+                <button type="button" class="btn btn-primary mt-2">Submit</button>
             </form>
         </section>
     </main>
 
     <!-- Footer Area -->
 
-    <footer></footer>
+    <footer class="container-fluid mt-5">
+        <div class="row footer-bg-cta">
+            <div class="col">
+                <div class="container footer-cta py-2">
+                    <div class="row align-items-center">
+                        <div class="col text-center">
+                            <h1>Let's Work Together!</h1>
+                            <h4>Need Something Done? I'm Open To New Opportunities.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-main py-3">
+            <div class="col">
+                <div class="container">
+                    <div class="row align-items-center gy-2">
+                        <div class="col d-flex justify-content-center justify-content-md-start order-last order-md-first">
+                            &copy; 2022 Charles Hall
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <img src="/img/screenshots/dw_signature_white.png" height="50">
+                        </div>
+                        <div class="col-12 col-md d-flex justify-content-center justify-content-md-end">
+                            <a href="#" class="socialIcons">
+                                <i class="bi bi-linkedin p-2"></i>
+                            </a>
+                            <a href="#" class="socialIcons">
+                                <i class="bi bi-instagram p-2"></i>
+                            </a>
+                            <a href="#" class="socialIcons">
+                                <i class="bi bi-github p-2"></i>
+                            </a>
+                            <a href="#" class="socialIcons">
+                                <i class="bi bi-twitter p-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
     <!-- Project Modals -->
 

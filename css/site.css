@@ -7,9 +7,9 @@
     --ch-body-font: 'Roboto', sans-serif;
 
     /* Theme Colors */
-    --ch-primary-color: #B4EAF0;
-    --ch-secondary-color: #97eaf3;
-    --ch-highlight-color: #316A70;
+    --ch-primary-color: rgb(180, 234, 240);
+    --ch-secondary-color: rgb(151, 234, 243);
+    --ch-highlight-color: #316a70;
     --ch-dark-color: #44585a;
     --ch-light-color: #D1E4F0;
     --ch-background-color: rgba(250, 250, 250, .8);
@@ -18,9 +18,23 @@
     --ch-font-weight: 400;
     --ch-line-height: 1.5rem;
     --ch-title-color: var(--ch-dark-color);
+
+    --ch-formfocus-border-color: var(--ch-highlight-color);
+    --ch-formfocus-shadow: var(--ch-primary-color);
+    --ch-formfocus-background-color: var(--ch-background-color);
+
+    --ch-nav-toggler-glow: rgba(180, 234, 240, .95);
+    --ch-nav-toggler-color: var(--ch-primary-color);
 }
 
+/* --- Bootstrap Overrides --- */
+
+/* --- Button Override --- */
+
+
 /* --- Element Overrides --- */
+
+
 h6,
 .h6,
 h5,
@@ -38,6 +52,69 @@ h1,
     text-transform: uppercase;
     letter-spacing: .1rem;
     color: var(--ch-title-color);
+}
+
+#mainNav {
+    background-color: var(--ch-dark-color);
+}
+
+#mainNav button {
+    border-color: var(--ch-light-color);
+}
+
+.navbar-toggler {
+    color: var(--ch-nav-toggler-glow) !important;
+}
+
+.navbar-toggler-icon-ch {
+    color: var(--ch-nav-toggler-color);
+    font-size: 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.btn-outline-primary {
+    color: var(--ch-light-color);
+    border-color: var(--ch-light-color) !important;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+    border-color: var(--ch-light-color) !important;
+    background-color: var(--ch-secondary-color);
+}
+
+.btn-primary {
+    color: white !important;
+    background-color: #316a70 !important;
+}
+
+.btn-primary:hover {
+    border-color: var(--ch-primary-color);
+    filter: brightness(1.1) !important;
+}
+
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary:focus {
+    filter: brightness(1.1) !important;
+    border-color: var(--ch-light-color);
+}
+
+/* --- Form Control Overrides --- */
+
+.form-control,
+.form-select {
+    background-color: var(--ch-background-color);
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--ch-background-color);
+    border-color: var(--ch-light-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px var(--ch-primary-color);
+
 }
 
 html,
@@ -138,7 +215,34 @@ footer {
     flex-shrink: 0;
 }
 
-/*  Break Points */
+.footer-cta {
+    border-radius: 15px;
+    background-color: var(--ch-primary-color);
+}
+
+.footer-bg-cta {
+    background: linear-gradient(to bottom, var(--ch-background-color), var(--ch-background-color) 50%, var(--ch-dark-color) 50%, var(--ch-dark-color) 100%);
+
+}
+
+.footer-main {
+    background-color: var(--ch-dark-color);
+    color: var(--ch-light-color);
+
+}
+
+.socialIcons {
+    font-size: 2rem;
+    color: white;
+}
+
+a.socialIcons:hover {
+    color: var(--ch-secondary-color);
+    opacity: 1;
+}
+
+/* --- Media Queries --- */
+
 @media(min-width: 575.98px) {
     .mainHeader {
         background-image: url(/img/screenshots/DevPortFolioBG_767.png);
@@ -199,14 +303,4 @@ footer {
         background-image: url(/img/screenshots/DevPortFolioBG_2560.png);
         height: 500px;
     }
-}
-
-.connectStyle {
-    background-color: #44585a;
-    color: white;
-}
-
-.connectColor {
-    font-weight: bold;
-    color: var(--ch-dark-color)
 }
