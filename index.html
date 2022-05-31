@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Charles Hall - Web Devloper</title>
+    <title>Charles Hall - Web Developer</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -400,10 +400,10 @@
             </p>
             <div class="d-flex flex-column align-items-center align-items-md-start">
                 <article class="card mb-4 blog-article">
-                    <div class="row g-0 blog-row">
+                    <div class="row g-0 blog-row" id="blog1">
                         <div class="col-md-4 blog-header">
                             <a class="blog-image-link" href="#">
-                                <img src="/img/Blog/Blog_FlyingGirl.jpg" class="blog-image" alt="Flying Girl SQL">
+                                <img id="image1" src="/img/Blog/Blog_FlyingGirl.jpg" class="blog-image" alt="Flying Girl SQL">
                             </a>
                             <div class="blog-date">
                                 <div class="blog-day">06</div>
@@ -412,7 +412,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body h-100 d-flex flex-column justify-content-around">
-                                <h4 class="card-title">MAKE SQL QUERIES FLY</h4>
+                                <h4 class="w-title">MAKE SQL QUERIES FLY</h4>
                                 <p class="card-text line-clamp">
                                     We apply the proverb 'Look before you leap' not only to our content
                                     but our power to repurpose. A company that can synthesize courageously will
@@ -862,6 +862,35 @@
                 });
             });
         });
+    </script>
+    <script>
+        // Step 1: Call the Blog Service to get the data
+        fetch('//genesisblog.herokuapp.com/api/BlogPostsAPI?num=3')
+            .then(response => response.json())
+            .then(function(data) {
+                // let title1 = document.querySelector("#blog1 h4.w-title");
+                // title1.innerHTML = data[0].Title;
+
+                // let footer1 = document.querselector("#blog1 span.w-category");
+                // footer1.innerHTML = 'Author: Charles Hall / Created: ${data[0].created.ToString("MMM dd, yyyy")}';
+
+                // let title2 = document.querySelector("#blog2 h4.w-title");
+                // title2.innerHTML = data[1].Title;
+
+                // let title3 = document.querySelector("#blog3 h4.w-title");
+                // title3.innerHTML = data[2].Title;
+
+                let blog1 = document.getElementById("blog1");
+                let title1 = blog1.querySelector("h4.w-title");
+                title1.innerHTML = data[0].title;
+                let abstract1 = blog1.querySelector("p.line-clamp");
+                abstract1.innerHTML = data[0].abstract;
+                let image1 = document.getElementById("image1");
+                image1.setAttribute("src", `data:${data[0].imageType};base64,${data[0].imageData}`);
+
+
+
+            });
     </script>
 
 </body>
