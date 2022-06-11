@@ -107,7 +107,7 @@
                         <img src="/img/screenshots/Hall_Cropped_576.jpg" class="img-fluid profilePic">
                     </picture>
                 </div>
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-8 py-2">
                     <h2>Hi - I'm Charles Hall, a full-stack web developer</h2>
                     <p>
                         Puzzles. At the end of the day, I love puzzles. Complicated, always changing, with millions of
@@ -435,7 +435,8 @@
                                 <div class="text-start">
                                     <a class="btn btn-primary btn-sm" id="image1a" href="">Read More</a>
                                 </div>
-                                <p class="card-text"><small id="#lastUpdated" class="text-muted"></small></p>
+                                <p class="card-text"><small id="#lastUpdated" class="text-muted">3 minutes ago</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -466,7 +467,8 @@
                                 <div class="text-start">
                                     <a class="btn btn-primary btn-sm" id="image2a" href="">Read More</a>
                                 </div>
-                                <p class="card-text"><small id="#lastUpdated" class="text-muted"></small></p>
+                                <p class="card-text"><small id="#lastUpdated1" class="text-muted">3 minutes ago</small>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -824,7 +826,11 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Visit Site</button>
+                    <a href="https://genesisblog.herokuapp.com/" class="socialIcons">
+                        <button type="button" class="btn btn-primary">
+                            Visit Site
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -876,7 +882,7 @@
     </script>
     <script>
         // Step 1: Call the Blog Service to get the data
-        fetch('//genesisblog.herokuapp.com/api/BlogPostsAPI?num=3')
+        fetch('//genesisblog.herokuapp.com/api/BlogPostsAPI?num=2')
             .then(response => response.json())
             .then(function (data) {
 
@@ -909,7 +915,7 @@
                 title2.innerHTML = data[1].title;
                 let abstract2 = blog2.querySelector("p.line-clamp");
                 abstract2.innerHTML = data[1].abstract;
-                let footer2 = document.getElementById("#lastUpdated");
+                let footer2 = document.getElementById("#lastUpdated1");
                 footer2.innerHTML = `Last Updated: ${new Date(data[1].updated).toLocaleDateString("en-US")}`;
                 let image2 = document.getElementById("image2");
                 image2.setAttribute("src", `data:${data[1].imageType};base64,${data[1].imageData}`);
@@ -919,10 +925,10 @@
                 let options = {
                     month: 'short',
                     day: 'numeric'
-                };
+                }
+
                 let created = new Date(data[0].created).toLocaleDateString("en-US", options);
                 let created1 = new Date(data[1].created).toLocaleDateString("en-US", options);
-                let created2 = new Date(data[2].created).toLocaleDateString("en-US", options);
 
                 let blogDay1 = document.querySelector("#blog1 div.blog-day");
                 blogDay1.innerHTML = created.split(" ")[1];
