@@ -473,6 +473,35 @@
                         </div>
                     </div>
                 </article>
+                <article class="card mb-4 blog-article">
+                    <div class="row g-0 blog-row" id="blog3">
+                        <div class="col-md-4 blog-header">
+                            <a class="blog-image-link" href="#">
+                                <img id="image3" src="/img/Blog/Blog_FlyingGirl.jpg" class="blog-image"
+                                    alt="Flying Girl SQL">
+                            </a>
+                            <div class="blog-date">
+                                <div class="blog-day">06</div>
+                                <div class="blog-month">April</div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body h-100 d-flex flex-column justify-content-around">
+                                <h4 class="w-title">MAKE SQL QUERIES FLY</h4>
+                                <p class="card-text line-clamp">
+                                    We apply the proverb 'Look before you leap' not only to our content
+                                    but our power to repurpose. A company that can synthesize courageously will
+                                    (eventually) be able to transition easily. Imagine a combination of HTTP and AJAX.
+                                </p>
+                                <div class="text-start">
+                                    <a class="btn btn-primary btn-sm" id="image3a" href="" target="_blank">Read More</a>
+                                </div>
+                                <p class="card-text"><small id="#lastUpdated2" class="text-muted">3 minutes ago</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
         <section id="contact" class="section-page">
@@ -886,7 +915,7 @@
     </script>
     <script>
         // Step 1: Call the Blog Service to get the data
-        fetch('//genesisblog.herokuapp.com/api/BlogPostsAPI?num=2')
+        fetch('//genesisblog.herokuapp.com/api/BlogPostsAPI?num=3')
             .then(response => response.json())
             .then(function (data) {
 
@@ -914,6 +943,18 @@
                 let image2a = document.getElementById("image2a");
                 image2a.setAttribute("href", `//genesisblog.herokuapp.com/PostDetails/${data[1].slug}`);
 
+                let blog3 = document.getElementById("blog3");
+                let title3 = blog3.querySelector("h4.w-title");
+                title3.innerHTML = data[2].title;
+                let abstract3 = blog3.querySelector("p.line-clamp");
+                abstract3.innerHTML = data[2].abstract;
+                let footer3 = document.getElementById("#lastUpdated2");
+                footer3.innerHTML = `Last Updated: ${new Date(data[2].updated).toLocaleDateString("en-US")}`;
+                let image3 = document.getElementById("image3");
+                image3.setAttribute("src", `data:${data[2].imageType};base64,${data[2].imageData}`);
+                let image3a = document.getElementById("image3a");
+                image3a.setAttribute("href", `//genesisblog.herokuapp.com/PostDetails/${data[2].slug}`);
+
                 let options = {
                     month: 'short',
                     day: 'numeric'
@@ -933,6 +974,12 @@
 
                 let blogMonth2 = document.querySelector("#blog2 div.blog-month");
                 blogMonth2.innerHTML = created1.split(" ")[0];
+
+                let blogDay3 = document.querySelector("#blog3 div.blog-day");
+                blogDay3.innerHTML = created1.split(" ")[1];
+
+                let blogMonth3 = document.querySelector("#blog3 div.blog-month");
+                blogMonth3.innerHTML = created1.split(" ")[0];
 
 
 
