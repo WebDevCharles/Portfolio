@@ -173,7 +173,7 @@ header {
     line-height: 1rem;
     font-weight: 300;
     letter-spacing: .09rem;
-    color: var(--ch-dark-color);
+    color: black;
 }
 
 /* Main section takes all available space */
@@ -241,9 +241,10 @@ a.socialIcons:hover {
     opacity: 1;
 }
 
+/* --- Media Queries --- */
 
 /* --- Media Queries --- */
-@media(min-width: 274.98px) {
+@media(min-width: 49.98px) {
     .mainHeader {
         background-image: url(/img/screenshots/2_375.png);
         height: 150px;
