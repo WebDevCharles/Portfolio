@@ -890,18 +890,6 @@
             .then(response => response.json())
             .then(function (data) {
 
-                // let title1 = document.querySelector("#blog1 h4.w-title");
-                // title1.innerHTML = data[0].Title;
-
-                // let footer1 = document.querselector("#blog1 span.w-category");
-                // footer1.innerHTML = 'Author: Charles Hall / Created: ${data[0].created.ToString("MMM dd, yyyy")}';
-
-                // let title2 = document.querySelector("#blog2 h4.w-title");
-                // title2.innerHTML = data[1].Title;
-
-                // let title3 = document.querySelector("#blog3 h4.w-title");
-                // title3.innerHTML = data[2].Title;
-
                 let blog1 = document.getElementById("blog1");
                 let title1 = blog1.querySelector("h4.w-title");
                 title1.innerHTML = data[0].title;
